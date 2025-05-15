@@ -2,36 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Snowmoon - Product</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Patrick+Hand&family=Quicksand&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product List - Snowmoon</title>
+  <style>
+    body { margin: 0; font-family: 'Comic Sans MS', cursive, sans-serif; background-color: #fdfbf7; }
+    header, footer { display: flex; align-items: center; justify-content: space-between; padding: 10px 40px; border-bottom: 1px solid #ccc; }
+    header img.logo { height: 48px; }
+    nav { display: flex; gap: 40px; font-size: 24px; }
+    nav a { text-decoration: none; color: #3a3a3a; }
+    .categories { text-align: center; padding: 20px; font-size: 22px; }
+    .products { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; padding: 20px; }
+    .products img { border: 3px solid #a0c18a; border-radius: 8px; width: 140px; height: auto; }
+    .promo { display: flex; align-items: center; justify-content: space-between; background: #fff; border: 3px solid #a0c18a; border-radius: 12px; margin: 40px auto; padding: 20px; width: 80%; }
+    .promo-text { font-size: 24px; line-height: 1.5; }
+    .promo-button { background-color: #c5dca0; border: none; padding: 10px 20px; border-radius: 20px; font-size: 18px; cursor: pointer; }
+    footer { border-top: 1px solid #ccc; font-size: 14px; flex-direction: column; text-align: center; }
+  </style>
 </head>
 <body>
-
-  <header class="navbar">
-    <div class="logo">Snowmoon</div>
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="category.html">Category</a>
-      <a href="cart.html">Cart</a>
+  <header>
+    <img src="logo.png" alt="Snowmoon Logo" class="logo" />
+    <nav>
+      <a href="#">Drink</a>
+      <a href="#">Cake</a>
+      <a href="#">Toastie</a>
+      <a href="#">Waffle</a>
     </nav>
+    <div>
+      <img src="search.png" alt="Search" style="height: 24px; margin-right: 10px;" />
+      <img src="cart.png" alt="Cart" style="height: 24px;" />
+    </div>
   </header>
 
-  <section class="special-offer">
-    <img src="product.png" alt="Waffle Deluxe">
-    <h2>Waffle Deluxe</h2>
-    <p class="discount">$5.99</p>
-    <p class="desc">Crispy golden waffle topped with coconut ice cream and chocolate drizzle.</p>
-    <button class="order-button" id="add-to-cart">Add to Cart</button>
-  </section>
+  <div class="categories">
+    <p>$5 MINIMUM Per Person for Dine-in</p>
+  </div>
 
-  <div class="toast" id="toast">🛒 Added to cart!</div>
-
-  <footer class="footer">
-    <p>&copy; 2025 Snowmoon. All rights reserved.</p>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
