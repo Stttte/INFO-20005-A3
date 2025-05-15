@@ -2,42 +2,108 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Snowmoon - Cart</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Patrick+Hand&family=Quicksand&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cart - Snowmoon</title>
+  <style>
+    body { margin: 0; font-family: 'Comic Sans MS', cursive, sans-serif; background-color: #fdfbf7; }
+    header, footer { display: flex; align-items: center; justify-content: space-between; padding: 10px 40px; border-bottom: 1px solid #ccc; }
+    header img.logo { height: 48px; }
+    nav { display: flex; gap: 40px; font-size: 24px; }
+    nav a { text-decoration: none; color: #3a3a3a; }
+    .cart-container { display: flex; justify-content: space-around; padding: 40px; }
+    .cart-items { width: 55%; border: 3px solid #a0c18a; border-radius: 12px; padding: 20px; background: #fff; }
+    .cart-items h2 { font-size: 28px; }
+    .cart-item { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+    .cart-item img { width: 60px; height: 60px; border-radius: 8px; }
+    .cart-item .info { flex-grow: 1; padding-left: 20px; }
+    .cart-item .price { font-weight: bold; }
+    .cart-item .quantity button { background-color: #a0c18a; border: none; border-radius: 20px; padding: 5px 10px; margin: 0 3px; cursor: pointer; }
+    .payment { width: 35%; border: 3px solid #a0c18a; border-radius: 12px; padding: 20px; background: #fff; }
+    .payment h2 { font-size: 28px; }
+    .payment input { width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 8px; border: 1px solid #ccc; }
+    .total { font-size: 24px; margin-top: 10px; }
+    .checkout-btn { background-color: #f2ce60; border: none; padding: 10px 20px; border-radius: 20px; font-size: 18px; margin-top: 20px; cursor: pointer; }
+    footer { border-top: 1px solid #ccc; font-size: 14px; flex-direction: column; text-align: center; }
+  </style>
 </head>
 <body>
-
-  <header class="navbar">
-    <div class="logo">Snowmoon</div>
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="category.html">Category</a>
-      <a href="cart.html">Cart</a>
+  <header>
+    <img src="logo.png" alt="Snowmoon Logo" class="logo" />
+    <nav>
+      <a href="#">Drink</a>
+      <a href="#">Cake</a>
+      <a href="#">Toastie</a>
+      <a href="#">Waffle</a>
     </nav>
+    <div>
+      <img src="search.png" alt="Search" style="height: 24px; margin-right: 10px;" />
+      <img src="cart.png" alt="Cart" style="height: 24px;" />
+    </div>
   </header>
 
-  <section class="journal">
-    <h3>Your Cart</h3>
-    <div class="entries">
-      <div class="entry">
-        <img src="product.png" alt="Waffle Deluxe">
-        <p>Waffle Deluxe - $5.99</p>
-        <button class="remove-btn">Remove</button>
+  <div class="cart-container">
+    <div class="cart-items">
+      <h2>Cart</h2>
+      <p style="color: orange; font-weight: bold;">$5 MINIMUM Per Person for Dine-in</p>
+      <div class="cart-item">
+        <img src="biscoff.png" alt="Strawberry Biscoff Waffle" />
+        <div class="info">
+          <strong>Strawberry Biscoff Waffle</strong>
+          <p>Eggs Waffle with Biscoff and Strawberry with Coconut Ice Cream, Whipped Cream and strawberry sauce</p>
+        </div>
+        <div class="price">AU$8.75</div>
+        <div class="quantity">
+          <button>-</button><span>1</span><button>+</button>
+        </div>
       </div>
-      <div class="entry">
-        <img src="product.png" alt="Ice Cream Cup">
-        <p>Ice Cream Cup - $3.99</p>
-        <button class="remove-btn">Remove</button>
+      <div class="cart-item">
+        <img src="cake.png" alt="Snow Strawberry Cheese Cake" />
+        <div class="info">
+          <strong>Snow Strawberry Cheese Cake</strong>
+          <p>Strawberry base layered with biscoff, cheesecake, rainbow sprinkles, whip cream</p>
+        </div>
+        <div class="price">AU$20.90</div>
+        <div class="quantity">
+          <button>-</button><span>1</span><button>+</button>
+        </div>
       </div>
     </div>
-  </section>
 
-  <footer class="footer">
-    <p>&copy; 2025 Snowmoon. All rights reserved.</p>
+    <div class="payment">
+      <h2>Pay</h2>
+      <input type="text" placeholder="Card: XXXX XXXX XXXX XXXX" />
+      <input type="text" placeholder="Cvv: XXX" />
+      <input type="text" placeholder="Expiry Date: XX/XX" />
+      <div class="total">Total: AU$29.65</div>
+      <button class="checkout-btn">check out</button>
+    </div>
+  </div>
+
+  <script>
+
+    document.querySelectorAll('.quantity').forEach(qty => {
+      const btns = qty.querySelectorAll('button');
+      const span = qty.querySelector('span');
+      btns[0].onclick = () => { let n = parseInt(span.innerText); if (n > 1) span.innerText = n - 1; };
+      btns[1].onclick = () => { let n = parseInt(span.innerText); span.innerText = n + 1; };
+    });
+
+    
+    document.querySelector('.checkout-btn')?.addEventListener('click', () => {
+      const card = document.querySelector('input[placeholder*="Card"]');
+      const cvv = document.querySelector('input[placeholder*="Cvv"]');
+      const expiry = document.querySelector('input[placeholder*="Expiry"]');
+      if (!card.value.match(/^\\d{16}$/)) return alert('Please enter a valid 16-digit card number.');
+      if (!cvv.value.match(/^\\d{3}$/)) return alert('Please enter a valid 3-digit CVV.');
+      if (!expiry.value.match(/^\\d{2}\\/\\d{2}$/)) return alert('Expiry format should be MM/YY.');
+      alert('Payment Submitted Successfully 🎉');
+    });
+  </script>
+
+  <footer>
+    <p>Address: Shop 667 The Causeway, 306 Little Collins St, Melbourne VIC 3000 AU</p>
+    <p>MON–THU: 17:00 – 22:00 | FRI–SAT: 15:00 – 22:00 | SUN: 17:00 – 22:00</p>
+    <p>@2025 Snowmoon | Icons by reCAPTCHA & Socials</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>

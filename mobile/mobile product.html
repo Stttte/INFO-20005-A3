@@ -1,21 +1,24 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Product List - Snowmoon</title>
+  <title>Strawberry Biscoff Waffle - Snowmoon</title>
   <style>
     body { margin: 0; font-family: 'Comic Sans MS', cursive, sans-serif; background-color: #fdfbf7; }
     header, footer { display: flex; align-items: center; justify-content: space-between; padding: 10px 40px; border-bottom: 1px solid #ccc; }
     header img.logo { height: 48px; }
     nav { display: flex; gap: 40px; font-size: 24px; }
     nav a { text-decoration: none; color: #3a3a3a; }
-    .categories { text-align: center; padding: 20px; font-size: 22px; }
-    .products { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; padding: 20px; }
-    .products img { border: 3px solid #a0c18a; border-radius: 8px; width: 140px; height: auto; }
-    .promo { display: flex; align-items: center; justify-content: space-between; background: #fff; border: 3px solid #a0c18a; border-radius: 12px; margin: 40px auto; padding: 20px; width: 80%; }
-    .promo-text { font-size: 24px; line-height: 1.5; }
-    .promo-button { background-color: #c5dca0; border: none; padding: 10px 20px; border-radius: 20px; font-size: 18px; cursor: pointer; }
+    .product-detail { display: flex; justify-content: space-around; padding: 40px; }
+    .product-image img { width: 360px; border-radius: 12px; }
+    .product-info { max-width: 400px; font-size: 20px; }
+    .product-info h1 { font-size: 32px; margin-bottom: 10px; }
+    .price { color: orange; font-size: 24px; font-weight: bold; }
+    .original-price { text-decoration: line-through; color: #888; margin-left: 10px; }
+    .quantity { margin-top: 20px; }
+    .quantity button { background-color: #a0c18a; border: none; border-radius: 20px; padding: 8px 16px; margin: 0 5px; cursor: pointer; }
     footer { border-top: 1px solid #ccc; font-size: 14px; flex-direction: column; text-align: center; }
   </style>
 </head>
@@ -34,7 +37,39 @@
     </div>
   </header>
 
-  <div class="categories">
-    <p>$5 MINIMUM Per Person for Dine-in</p>
+  <div class="product-detail">
+    <div class="product-image">
+      <img src="biscoff.png" alt="Strawberry Biscoff Waffle" />
+    </div>
+    <div class="product-info">
+      <h1>Strawberry Biscoff Waffle</h1>
+      <p>Eggs Waffle with Biscoff and Strawberry with Coconut Ice Cream, Whipped Cream and strawberry sauce</p>
+      <div>
+        <span class="price">AU$8.75</span>
+        <span class="original-price">AU$17.50</span>
+      </div>
+      <div class="quantity">
+        <button>-</button>
+        <span>1</span>
+        <button>+</button>
+      </div>
+    </div>
   </div>
 
+  <script>
+    const qty = document.querySelector('.quantity');
+    if (qty) {
+      const btns = qty.querySelectorAll('button');
+      const span = qty.querySelector('span');
+      btns[0].onclick = () => { let n = parseInt(span.innerText); if (n > 1) span.innerText = n - 1; };
+      btns[1].onclick = () => { let n = parseInt(span.innerText); span.innerText = n + 1; };
+    }
+  </script>
+
+  <footer>
+    <p>Address: Shop 667 The Causeway, 306 Little Collins St, Melbourne VIC 3000 AU</p>
+    <p>MON–THU: 17:00 – 22:00 | FRI–SAT: 15:00 – 22:00 | SUN: 17:00 – 22:00</p>
+    <p>@2025 Snowmoon | Icons by reCAPTCHA & Socials</p>
+  </footer>
+</body>
+</html>
