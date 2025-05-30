@@ -3,244 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Snowmoon - Home</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Patrick+Hand&family=Quicksand&display=swap" rel="stylesheet" />
+  <title>Product List - Snowmoon</title>
   <style>
-    :root {
-      --bg: #FAF8F2;
-      --pic: #377DAB;
-      --text: #2E3A4C;
-      --outline: #D6D6D6;
-      --accent: #F9C94C;
-      --button: #B6C59A;
-      --icon: #8FA77A;
-    }
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: 'Quicksand', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 24px;
-      background-color: var(--bg);
-      border-bottom: 1px solid var(--outline);
-      flex-wrap: wrap;
-    }
-    .logo {
-      font-family: 'Fredoka One', cursive;
-      font-size: 24px;
-      color: var(--icon);
-    }
-    .nav-links {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text);
-      font-weight: bold;
-    }
-    .special-offer {
-      background-color: white;
-      border-radius: 16px;
-      margin: 24px;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    }
-    .special-offer img {
-      width: 100%;
-      max-width: 360px;
-      border-radius: 16px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-    .special-offer h2 {
-      font-family: 'Fredoka One';
-      font-size: 22px;
-      margin: 12px 0 6px;
-      color: var(--text);
-    }
-    .discount {
-      color: var(--accent);
-      font-weight: bold;
-      font-size: 18px;
-      margin: 8px 0;
-    }
-    .order-button {
-      background-color: var(--button);
-      color: var(--text);
-      border: none;
-      padding: 10px 20px;
-      border-radius: 24px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .order-button:hover {
-      background-color: #A2B98C;
-    }
-    .categories {
-      padding: 0 24px 24px;
-    }
-    .categories h3 {
-      font-family: 'Patrick Hand', cursive;
-      font-size: 20px;
-      margin-bottom: 16px;
-      color: var(--text);
-    }
-    .category-items {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      justify-content: space-around;
-    }
-    .cat {
-      background-color: white;
-      padding: 12px;
-      border-radius: 12px;
-      width: 40%;
-      text-align: center;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-      border: 1px solid var(--outline);
-    }
-    .cat img {
-      width: 80px;
-      margin-bottom: 8px;
-    }
-    .journal {
-      background-color: white;
-      margin: 24px;
-      padding: 20px;
-      border-radius: 16px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    }
-    .journal h3 {
-      font-family: 'Patrick Hand', cursive;
-      font-size: 20px;
-      margin-bottom: 12px;
-      color: var(--text);
-    }
-    .entries {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .entry {
-      background: var(--bg);
-      border: 1px solid var(--outline);
-      border-radius: 12px;
-      padding: 16px;
-      text-align: center;
-    }
-    .entry img {
-      width: 100%;
-      max-width: 240px;
-      border-radius: 12px;
-      margin-bottom: 8px;
-    }
-    .entry button {
-      background-color: var(--accent);
-      border: none;
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-weight: bold;
-      color: var(--text);
-      cursor: pointer;
-    }
-    footer {
-      background-color: var(--bg);
-      text-align: center;
-      padding: 16px;
-      font-size: 12px;
-      color: var(--text);
-      border-top: 1px solid var(--outline);
-    }
-
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .nav-links {
-        flex-direction: column;
-        gap: 8px;
-        margin-top: 10px;
-      }
-      .special-offer, .journal {
-        margin: 16px;
-        padding: 16px;
-      }
-      .category-items {
-        flex-direction: column;
-        align-items: center;
-      }
-      .cat {
-        width: 100%;
-        max-width: 300px;
-      }
-      .entry img {
-        max-width: 100%;
-      }
-    }
+    body { margin: 0; font-family: 'Comic Sans MS', cursive, sans-serif; background-color: #fdfbf7; }
+    header, footer { display: flex; align-items: center; justify-content: space-between; padding: 10px 40px; border-bottom: 1px solid #ccc; }
+    header img.logo { height: 48px; }
+    nav { display: flex; gap: 40px; font-size: 24px; }
+    nav a { text-decoration: none; color: #3a3a3a; }
+    .categories { text-align: center; padding: 20px; font-size: 22px; }
+    .products { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; padding: 20px; }
+    .products img { border: 3px solid #a0c18a; border-radius: 8px; width: 140px; height: auto; }
+    .promo { display: flex; align-items: center; justify-content: space-between; background: #fff; border: 3px solid #a0c18a; border-radius: 12px; margin: 40px auto; padding: 20px; width: 80%; }
+    .promo-text { font-size: 24px; line-height: 1.5; }
+    .promo-button { background-color: #c5dca0; border: none; padding: 10px 20px; border-radius: 20px; font-size: 18px; cursor: pointer; }
+    footer { border-top: 1px solid #ccc; font-size: 14px; flex-direction: column; text-align: center; }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">Snowmoon</div>
-    <div class="nav-links">
-      <a href="#">Home</a>
-      <a href="#">Category</a>
-      <a href="#">Cart</a>
+    <img src="logo.png" alt="Snowmoon Logo" class="logo" />
+    <nav>
+      <a href="#">Drink</a>
+      <a href="#">Cake</a>
+      <a href="#">Toastie</a>
+      <a href="#">Waffle</a>
+    </nav>
+    <div>
+      <img src="search.png" alt="Search" style="height: 24px; margin-right: 10px;" />
+      <img src="cart.png" alt="Cart" style="height: 24px;" />
     </div>
   </header>
 
-  <section class="special-offer">
-    <img src="images/foithong.jpg" alt="Cream FoiThong Waffle">
-    <h2>Special price for today !!!</h2>
-    <p class="discount">50% discount</p>
-    <button class="order-button">Order Now</button>
-  </section>
-
-  <section class="categories">
-    <h3>Categories</h3>
-    <div class="category-items">
-      <div class="cat"><img src="images/drink.png" alt="Drink"><p>Drink</p></div>
-      <div class="cat"><img src="images/cake.png" alt="Cake"><p>Cake</p></div>
-      <div class="cat"><img src="images/toastie.png" alt="Toastie"><p>Toastie</p></div>
-      <div class="cat"><img src="images/waffle.png" alt="Waffle"><p>Waffle</p></div>
-    </div>
-  </section>
-
-  <section class="journal">
-    <h3>Journal</h3>
-    <div class="entries">
-      <div class="entry">
-        <img src="images/strawberry.jpg" alt="Snow Strawberry Cheesecake">
-        <p>Snow Strawberry Cheesecake</p>
-        <button>Read Now</button>
-      </div>
-      <div class="entry">
-        <img src="images/foithong.jpg" alt="Cream FoiThong Waffle">
-        <p>Cream FoiThong Waffle</p>
-        <button>Read Now</button>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>Address: Shop 6&7 The Causeway, 306 Little Collins St, Melbourne VIC 3000 AU</p>
-    <p>Time: MON–THU: 17:00–22:00 / FRI–SAT: 15:00–22:00 / SUN: 17:00–22:00</p>
-    <p>&copy; 2025 Snowmoon</p>
-  </footer>
-</body>
-</html>
+  <div class="categories">
+    <p>$5 MINIMUM Per Person for Dine-in</p>
+  </div>
