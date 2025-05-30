@@ -4,47 +4,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cart - Snowmoon</title>
-  <style>
-    body { margin: 0; font-family: 'Comic Sans MS', cursive, sans-serif; background-color: #fdfbf7; }
-    header, footer { display: flex; align-items: center; justify-content: space-between; padding: 10px 40px; border-bottom: 1px solid #ccc; }
-    header img.logo { height: 48px; }
-    nav { display: flex; gap: 40px; font-size: 24px; }
-    nav a { text-decoration: none; color: #3a3a3a; }
-    .cart-container { display: flex; justify-content: space-around; padding: 40px; }
-    .cart-items { width: 55%; border: 3px solid #a0c18a; border-radius: 12px; padding: 20px; background: #fff; }
-    .cart-items h2 { font-size: 28px; }
-    .cart-item { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-    .cart-item img { width: 60px; height: 60px; border-radius: 8px; }
-    .cart-item .info { flex-grow: 1; padding-left: 20px; }
-    .cart-item .price { font-weight: bold; }
-    .cart-item .quantity button { background-color: #a0c18a; border: none; border-radius: 20px; padding: 5px 10px; margin: 0 3px; cursor: pointer; }
-    .payment { width: 35%; border: 3px solid #a0c18a; border-radius: 12px; padding: 20px; background: #fff; }
-    .payment h2 { font-size: 28px; }
-    .payment input { width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 8px; border: 1px solid #ccc; }
-    .total { font-size: 24px; margin-top: 10px; }
-    .checkout-btn { background-color: #f2ce60; border: none; padding: 10px 20px; border-radius: 20px; font-size: 18px; margin-top: 20px; cursor: pointer; }
-    footer { border-top: 1px solid #ccc; font-size: 14px; flex-direction: column; text-align: center; }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Patrick+Hand&family=Quicksand&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="Page Style.css" />
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="Snowmoon Logo" class="logo" style="height: 100px;" />
-    <nav>
-      <a href="#">Drink</a>
-      <a href="#">Cake</a>
-      <a href="#">Toastie</a>
-      <a href="#">Waffle</a>
-    </nav>
-    <div>
-      <img src="search.png" alt="Search" style="height: 24px; margin-right: 10px;" />
-      <img src="cart.png" alt="Cart" style="height: 24px;" />
+    <img src="logo.png" alt="Snowmoon Logo" class="logo" style="height: 70px; width: auto;" />
+    <div class="icon-group">
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8FA77A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="#8FA77A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+        <circle cx="9" cy="21" r="1"></circle>
+        <circle cx="20" cy="21" r="1"></circle>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61l1.38-7.39H6" />
+      </svg>
     </div>
   </header>
 
   <div class="cart-container">
     <div class="cart-items">
       <h2>Cart</h2>
-      <p style="color: orange; font-weight: bold;">$5 MINIMUM Per Person for Dine-in</p>
+      <p class="price">$5 MINIMUM Per Person for Dine-in</p>
+
       <div class="cart-item">
         <img src="biscoff.png" alt="Strawberry Biscoff Waffle" />
         <div class="info">
@@ -56,6 +39,7 @@
           <button>-</button><span>1</span><button>+</button>
         </div>
       </div>
+
       <div class="cart-item">
         <img src="cake.png" alt="Snow Strawberry Cheese Cake" />
         <div class="info">
@@ -80,34 +64,33 @@
   </div>
 
   <script>
-  document.querySelectorAll('.quantity').forEach(qty => {
-    const btns = qty.querySelectorAll('button');
-    const span = qty.querySelector('span');
-    btns[0].onclick = () => { let n = parseInt(span.innerText); if (n > 1) span.innerText = n - 1; };
-    btns[1].onclick = () => { let n = parseInt(span.innerText); span.innerText = n + 1; };
-  });
+    document.querySelectorAll('.quantity').forEach(qty => {
+      const btns = qty.querySelectorAll('button');
+      const span = qty.querySelector('span');
+      btns[0].onclick = () => { let n = parseInt(span.innerText); if (n > 1) span.innerText = n - 1; };
+      btns[1].onclick = () => { let n = parseInt(span.innerText); span.innerText = n + 1; };
+    });
 
-  document.querySelector('.checkout-btn')?.addEventListener('click', () => {
-    const card = document.querySelector('input[placeholder*="Card"]');
-    const cvv = document.querySelector('input[placeholder*="Cvv"]');
-    const expiry = document.querySelector('input[placeholder*="Expiry"]');
-    if (!card.value.match(/^\d{16}$/)) return alert('Please enter a valid 16-digit card number.');
-    if (!cvv.value.match(/^\d{3}$/)) return alert('Please enter a valid 3-digit CVV.');
-    if (!expiry.value.match(/^\d{2}\/\d{2}$/)) return alert('Expiry format should be MM/YY.');
-    alert('Payment Submitted Successfully 🎉');
-  });
-</script>
-
+    document.querySelector('.checkout-btn')?.addEventListener('click', () => {
+      const card = document.querySelector('input[placeholder*="Card"]');
+      const cvv = document.querySelector('input[placeholder*="Cvv"]');
+      const expiry = document.querySelector('input[placeholder*="Expiry"]');
+      if (!card.value.match(/^\d{16}$/)) return alert('Please enter a valid 16-digit card number.');
+      if (!cvv.value.match(/^\d{3}$/)) return alert('Please enter a valid 3-digit CVV.');
+      if (!expiry.value.match(/^\d{2}\/\d{2}$/)) return alert('Expiry format should be MM/YY.');
+      alert('Payment Submitted Successfully 🎉');
+    });
+  </script>
 
   <footer>
-    <div style="display: flex; align-items: flex-start; gap: 16px; justify-content: flex-start; flex-wrap: wrap; padding: 10px;">
-      <img src="logo.png" alt="Snowmoon Logo" style="height: 100px;" />
+    <div class="footer-content">
+      <img src="logo.png" alt="Snowmoon Logo" />
       <div>
         <p>Address: Shop 667 The Causeway, 306 Little Collins St, Melbourne VIC 3000 AU</p>
         <p>Time: MON–THU: 17:00–22:00 / FRI–SAT: 15:00–22:00 / SUN: 17:00–22:00</p>
       </div>
     </div>
-    <p style="margin-top: 8px;">@2025 Snowmoon</p>
+    <p class="footer-bottom">@2025 Snowmoon</p>
   </footer>
 </body>
 </html>
