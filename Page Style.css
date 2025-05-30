@@ -26,13 +26,13 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 24px;
+  padding: 4px 24px;
   background-color: var(--bg);
   border-bottom: 1px solid var(--outline);
   flex-wrap: wrap;
 }
 .logo {
-  height: 70px;
+  height: 80px;
   width: auto;
   font-family: 'Fredoka One', cursive;
 }
@@ -168,35 +168,33 @@ header {
 }
 
 /* =============== Footer =============== */
+/* =============== Footer =============== */
 footer {
-  border-top: 1px solid var(--outline); 
+  background-color: var(--bg);
+  border-top: 1px solid var(--outline);
   padding: 16px 32px;
   font-family: 'Quicksand', sans-serif;
   font-size: 13px;
-  color: #2E3A4C;
+  color: var(--text);
 }
 
-
-.footer-container {
+.footer-main {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
   flex-wrap: wrap;
-  gap: 20px;
+  align-items: flex-start;
 }
 
 .footer-left {
   display: flex;
   gap: 16px;
-  flex: 1 1 300px;
+  flex: 1 1 60%;
   align-items: flex-start;
 }
 
-
 .footer-logo {
-  height: 70px; 
-  width: auto;
-  margin-top: -2px;
+  height: 80px;
+  margin-top: 2px;
 }
 
 .footer-info p {
@@ -204,48 +202,44 @@ footer {
   line-height: 1.4;
 }
 
-.footer-info a {
-  color: #2E3A4C;
-  text-decoration: underline;
-}
-
-.footer-middle {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
-  flex: 1 1 180px;
-}
-
-.footer-middle img {
-  height: 20px;
-}
-
 .footer-right {
-  text-align: right;
-  flex: 1 1 140px;
-}
-
-.footer-right .social-icons {
   display: flex;
-  justify-content: flex-end;
-  gap: 8px;
-  margin-bottom: 6px;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex: 1 1 120px;
 }
 
-.footer-right .social-icons img {
-  height: 24px;
-  width: 24px;
+.social-icons {
+  display: flex;
+  gap: 12px;
 }
 
-.footer-right p {
-  margin: 0;
-}
-footer {
-  border-top: 1px solid var(--outline);
-  background-color: var(--bg);
+.social-icon {
+  height: 36px;
+  width: 36px;
 }
 
+.footer-year {
+  font-size: 14px;
+  margin-top: 55px; 
+  margin-bottom: 0;
+  text-align: right;
+}
+
+.footer-pay-row {
+  width: 100%;
+  text-align: center;
+  margin-top: 12px;
+}
+
+.payment-sprite {
+  height: 28px;
+  object-fit: contain;
+}
+
+
+/* =============== Sticky Footer =============== */
 
 html, body {
   height: 100%;
