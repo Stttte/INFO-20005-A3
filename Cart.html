@@ -9,7 +9,7 @@
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="Snowmoon Logo" class="logo" style="height: 70px; width: auto;" />
+    <img src="logo.png" alt="Snowmoon Logo" class="logo" />
     <div class="icon-group">
       <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8FA77A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="11" cy="11" r="8"></circle>
@@ -23,45 +23,47 @@
     </div>
   </header>
 
-  <div class="cart-container">
-    <div class="cart-items">
-      <h2>Cart</h2>
-      <p class="price">$5 MINIMUM Per Person for Dine-in</p>
+  <main class="content">
+    <div class="cart-container">
+      <div class="cart-items">
+        <h2>Cart</h2>
+        <p class="price">$5 MINIMUM Per Person for Dine-in</p>
 
-      <div class="cart-item">
-        <img src="biscoff.png" alt="Strawberry Biscoff Waffle" />
-        <div class="info">
-          <strong>Strawberry Biscoff Waffle</strong>
-          <p>Eggs Waffle with Biscoff and Strawberry with Coconut Ice Cream, Whipped Cream and strawberry sauce</p>
+        <div class="cart-item">
+          <img src="biscoff.png" alt="Strawberry Biscoff Waffle" />
+          <div class="info">
+            <strong>Strawberry Biscoff Waffle</strong>
+            <p>Eggs Waffle with Biscoff and Strawberry with Coconut Ice Cream, Whipped Cream and strawberry sauce</p>
+          </div>
+          <div class="price">AU$8.75</div>
+          <div class="quantity">
+            <button>-</button><span>1</span><button>+</button>
+          </div>
         </div>
-        <div class="price">AU$8.75</div>
-        <div class="quantity">
-          <button>-</button><span>1</span><button>+</button>
+
+        <div class="cart-item">
+          <img src="cake.png" alt="Snow Strawberry Cheese Cake" />
+          <div class="info">
+            <strong>Snow Strawberry Cheese Cake</strong>
+            <p>Strawberry base layered with biscoff, cheesecake, rainbow sprinkles, whip cream</p>
+          </div>
+          <div class="price">AU$20.90</div>
+          <div class="quantity">
+            <button>-</button><span>1</span><button>+</button>
+          </div>
         </div>
       </div>
 
-      <div class="cart-item">
-        <img src="cake.png" alt="Snow Strawberry Cheese Cake" />
-        <div class="info">
-          <strong>Snow Strawberry Cheese Cake</strong>
-          <p>Strawberry base layered with biscoff, cheesecake, rainbow sprinkles, whip cream</p>
-        </div>
-        <div class="price">AU$20.90</div>
-        <div class="quantity">
-          <button>-</button><span>1</span><button>+</button>
-        </div>
+      <div class="payment">
+        <h2>Pay</h2>
+        <input type="text" placeholder="Card: XXXX XXXX XXXX XXXX" />
+        <input type="text" placeholder="Cvv: XXX" />
+        <input type="text" placeholder="Expiry Date: XX/XX" />
+        <div class="total">Total: AU$29.65</div>
+        <button class="checkout-btn">check out</button>
       </div>
     </div>
-
-    <div class="payment">
-      <h2>Pay</h2>
-      <input type="text" placeholder="Card: XXXX XXXX XXXX XXXX" />
-      <input type="text" placeholder="Cvv: XXX" />
-      <input type="text" placeholder="Expiry Date: XX/XX" />
-      <div class="total">Total: AU$29.65</div>
-      <button class="checkout-btn">check out</button>
-    </div>
-  </div>
+  </main>
 
   <script>
     document.querySelectorAll('.quantity').forEach(qty => {
@@ -83,14 +85,39 @@
   </script>
 
   <footer>
-    <div class="footer-content">
-      <img src="logo.png" alt="Snowmoon Logo" />
-      <div>
-        <p>Address: Shop 667 The Causeway, 306 Little Collins St, Melbourne VIC 3000 AU</p>
-        <p>Time: MON–THU: 17:00–22:00 / FRI–SAT: 15:00–22:00 / SUN: 17:00–22:00</p>
+    <div class="footer-container">
+      <div class="footer-left">
+        <img src="logo.png" alt="Snowmoon Logo" class="footer-logo" />
+        <div class="footer-info">
+          <p>Address: Shop 6&7 The Causeway, 306 Little Collins St, Melbourne VIC 3000 AU</p>
+          <p>Time: MON – THU: 17:00p.m. – 22:00p.m.<br>
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FRI – SAT: 15:00p.m. – 22:00p.m.<br>
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SUN: 17:00p.m. – 22:00p.m.</p>
+          <p>This form is protected by reCAPTCHA and the Google 
+            <a href="#">Privacy Policy</a> and 
+            <a href="#">Terms of Service</a> apply.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-middle">
+        <img src="applepay.png" alt="Apple Pay" />
+        <img src="googlepay.png" alt="Google Pay" />
+        <img src="visa.png" alt="Visa" />
+        <img src="mastercard.png" alt="Mastercard" />
+        <img src="amex.png" alt="Amex" />
+        <img src="jcb.png" alt="JCB" />
+      </div>
+
+      <div class="footer-right">
+        <div class="social-icons">
+          <img src="email-icon.png" alt="Email" />
+          <img src="facebook-icon.png" alt="Facebook" />
+          <img src="instagram-icon.png" alt="Instagram" />
+        </div>
+        <p>@2025</p>
       </div>
     </div>
-    <p class="footer-bottom">@2025 Snowmoon</p>
   </footer>
 </body>
 </html>
