@@ -1,6 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", () => {
-  // 分类展开
+  // index open/close
   document.querySelectorAll(".toggle-card").forEach(card => {
     card.addEventListener("click", () => {
       const dropdown = card.nextElementSibling;
@@ -8,13 +8,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 功能开发中弹窗
+  // popup window
   document.getElementById("feature-button")?.addEventListener("click", e => {
     e.preventDefault();
-    alert("该功能仍在开发中！");
+    alert("sorry");
   });
 
-  // 平滑滚动 Explore More
+  // Explore More
   document.getElementById("scroll-to-category")?.addEventListener("click", () => {
     document.getElementById("category-section")?.scrollIntoView({ behavior: "smooth" });
   });
