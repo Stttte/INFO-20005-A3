@@ -52,34 +52,108 @@ header {
   color: var(--text);
   font-weight: bold;
 }
+/* =============== Information Bar =============== */
+.info-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 18px;
+  padding: 6px 12px;
+  
+  border-bottom: 1px solid #ccc;
+  background-color: #FDFBF7;
+  position: relative;
+  color: #2E3A4C;
+}
+.info-bar .close-btn {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: normal;
+  color: #2E3A4C;
+  cursor: pointer;
+}
+
 
 /* =============== Special Offer Section =============== */
 .special-offer {
   background-color: white;
-  border-radius: 16px;
-  margin: 24px;
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-}
-.special-offer img {
+  border-radius: 24px;
+  margin: 24px auto;
+  padding: 64px 48px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
   width: 100%;
-  max-width: 360px;
-  border-radius: 16px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  max-width: 1300px;
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
 }
-.special-offer h2 {
-  font-family: 'Fredoka One';
-  font-size: 22px;
-  margin: 12px 0 6px;
+
+.special-offer .offer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.special-offer {
+  display: flex;
+  justify-content: flex-start; 
+  align-items: center;         
+  padding: 64px 48px;
+  gap: 64px;                   
+}
+
+.special-offer img {
+  width: 300px;                
+  height: 300px;
+  border-radius: 16px;
+  display: block;
+}
+
+
+.offer-text {
+  max-width: 480px;
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.product-name {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 18px;
+  margin: 0;
   color: var(--text);
 }
-.discount {
-  color: var(--accent);
-  font-weight: bold;
-  font-size: 18px;
-  margin: 8px 0;
+
+.offer-text h2 {
+  font-family: 'Fredoka One';
+  font-size: 28px;
+  margin: 0;
+  color: var(--text);
 }
+
+.discount {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 20px;
+  color: var(--accent);
+  margin: 0;
+  font-weight: bold;
+}
+
 .order-button {
   background-color: var(--button);
   color: var(--text);
@@ -91,8 +165,24 @@ header {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
 .order-button:hover {
   background-color: #A2B98C;
+}
+
+@media (max-width: 768px) {
+  .special-offer .offer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .offer-text {
+    align-items: center;
+  }
+
+  .order-button {
+    align-self: center;
+  }
 }
 
 /* =============== Categories Section =============== */
