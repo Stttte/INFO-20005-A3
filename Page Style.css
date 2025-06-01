@@ -307,14 +307,7 @@ header {
     gap: 16px;
   }
 
-  .special-offer .offer-content {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    width: 100%;
-  }
-
+  .annotated-image-text,
   .annotated-image {
     flex: 1;
     text-align: center;
@@ -323,15 +316,20 @@ header {
   .annotated-image img {
     width: 140px;
     height: auto;
+    border-radius: 12px;
   }
 
-  .product-name {
-    font-size: 14px;
-    margin-top: 6px;
+  .label,
+  .label::after,
+  .product-name,
+  .offer-cartoon {
+    display: none !important;
   }
 
   .offer-text {
     flex: 1;
+    display: flex;
+    flex-direction: column;
     align-items: flex-start;
     gap: 12px;
   }
@@ -340,20 +338,19 @@ header {
   .title-second {
     font-size: 20px;
     line-height: 1.2;
+    margin: 0;
   }
 
   .discount {
     font-size: 16px;
+    color: #F9C94C;
+    margin: 0;
   }
 
   .order-button {
-    padding: 10px 20px;
     font-size: 16px;
+    padding: 10px 20px;
     margin-top: 12px;
-  }
-
-  .offer-cartoon {
-    display: none !important;
   }
 }
 
@@ -439,36 +436,36 @@ header {
 
 @media (max-width: 768px) {
   .category-items {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    gap: 24px;
-    padding: 16px;
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    scroll-snap-type: x mandatory;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    padding: 16px;
   }
 
   .cat {
-    scroll-snap-align: center;
-    flex: 0 0 auto;
-    width: 160px;
+    width: 40%;
+    max-width: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
   }
 
   .cat-box {
     width: 100%;
-    height: 160px;
+    height: 140px;
   }
 
   .cat-img {
-    width: auto;
-    max-height: 100px;
+    max-width: 80%;
+    height: auto;
   }
 
   .cat p {
-    font-size: 18px;
+    font-size: 16px;
     text-align: center;
-    margin-top: 8px;
+    margin: 0;
   }
 }
 
@@ -568,21 +565,31 @@ header {
 @media (max-width: 768px) {
   .journal-items {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 24px;
+    gap: 16px;
     padding: 16px;
+    flex-wrap: wrap;
   }
 
   .journal-entry {
-    width: 45%; 
+    width: 45%;
     max-width: 280px;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .journal-img-box {
     width: 100%;
-    height: auto;
+    aspect-ratio: 1 / 1;
+    border-radius: 28px;
+    border: 1.5px solid var(--outline);
+    background-color: white;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .journal-img {
@@ -594,13 +601,14 @@ header {
   .journal-entry p {
     font-size: 16px;
     text-align: center;
-    margin-top: 8px;
+    margin-top: 12px;
+    min-height: 2.5em;
   }
 
   .journal-btn {
     font-size: 16px;
     padding: 10px 20px;
-    margin-top: 8px;
+    margin-top: auto;
   }
 }
 
@@ -717,7 +725,7 @@ footer {
 @media (max-width: 768px) {
   footer {
     padding: 24px;
-    border-top: 1px solid var(--outline); 
+    border-top: 1px solid var(--outline);
   }
 
   .footer-main {
@@ -725,31 +733,32 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 24px;
-    flex-wrap: wrap;
+    gap: 16px;
+    flex-wrap: nowrap;
+    padding: 0;
   }
 
   .footer-left {
     flex: 1;
     display: flex;
     flex-direction: row;
+    gap: 12px;
     align-items: flex-start;
-    gap: 16px;
   }
 
   .footer-logo {
-    height: 100px;
+    height: 72px;
     width: auto;
   }
 
   .footer-info p {
-    font-size: 13px;
+    font-size: 12px;
     line-height: 1.4;
     text-align: left;
   }
 
   .footer-right {
-    flex: 1;
+    flex: 0 0 auto;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -759,26 +768,30 @@ footer {
 
   .social-icons {
     display: flex;
-    gap: 12px;
+    gap: 10px;
+  }
+
+  .social-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .footer-pay-row {
+    display: flex;
+    gap: 6px;
+    flex-wrap: nowrap;
     justify-content: flex-end;
     width: 100%;
   }
 
-  .footer-year {
-    font-size: 14px;
-    text-align: right;
-    margin-top: 24px;
-  }
-
-  .footer-pay-row {
-    text-align: right;
-    width: 100%;
-    margin-top: 12px;
-  }
-
   .payment-sprite {
-    height: 28px;
+    height: 24px;
     object-fit: contain;
+  }
+
+  .footer-year {
+    font-size: 12px;
+    text-align: right;
   }
 }
 
