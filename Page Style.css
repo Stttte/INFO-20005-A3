@@ -303,25 +303,44 @@ header {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 24px 16px;
-    gap: 16px;
+    padding: 16px 16px;
+    gap: 8px;
   }
 
-  .annotated-image-text,
-  .annotated-image {
-    flex: 1;
-    text-align: center;
-  }
+  .annotated-image-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+  transform: translate(12px, -8px); 
+}
 
-  .annotated-image img {
-    width: 140px;
-    height: auto;
-    border-radius: 12px;
-  }
+.annotated-image {
+  width: 160px;
+  margin: 0 auto;
+}
+
+.annotated-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.product-name {
+  display: block !important;
+  font-size: 16px;
+  font-family: 'Patrick Hand', cursive;
+  color: var(--text);
+  text-align: center;
+  margin-top: 6px;
+  width: 100%;
+  transform: translate(-2px); 
+}
 
   .label,
   .label::after,
-  .product-name,
   .offer-cartoon {
     display: none !important;
   }
@@ -332,13 +351,32 @@ header {
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
+    margin-left: -20px;
+    margin-top: 4px;
+  }
+
+  .offer-title {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transform: none !important;
   }
 
   .offer-title h2,
   .title-second {
-    font-size: 20px;
+    font-size: 22px;
     line-height: 1.2;
     margin: 0;
+  }
+
+  .discount-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    transform: none !important;
   }
 
   .discount {
@@ -350,7 +388,7 @@ header {
   .order-button {
     font-size: 16px;
     padding: 10px 20px;
-    margin-top: 12px;
+    margin: 0;
   }
 }
 
