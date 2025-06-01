@@ -80,7 +80,6 @@ header {
   cursor: pointer;
 }
 
-
 /* =============== Special Offer Section =============== */
 .special-offer {
   background-color: transparent;
@@ -300,42 +299,64 @@ header {
 }
 
 @media (max-width: 480px) {
-  .special-offer .offer-content {
-    flex-direction: column;
+  .special-offer {
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+    padding: 24px 16px;
+    gap: 16px;
+  }
+
+  .special-offer .offer-content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+
+  .annotated-image {
+    flex: 1;
     text-align: center;
   }
 
+  .annotated-image img {
+    width: 140px;
+    height: auto;
+  }
+
+  .product-name {
+    font-size: 14px;
+    margin-top: 6px;
+  }
+
   .offer-text {
-    align-items: center;
-    margin-top: 24px;
+    flex: 1;
+    align-items: flex-start;
+    gap: 12px;
   }
 
   .offer-title h2,
   .title-second {
-    font-size: 28px;
+    font-size: 20px;
     line-height: 1.2;
   }
 
   .discount {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .order-button {
-    padding: 12px 28px;
-    font-size: 18px;
+    padding: 10px 20px;
+    font-size: 16px;
     margin-top: 12px;
   }
 
-  .annotated-image img {
-    width: 280px;
-  }
-
-  .product-name {
-    font-size: 18px;
-    margin-top: 12px;
+  .offer-cartoon {
+    display: none !important;
   }
 }
+
 /* =============== Categories Section =============== */
 .categories-wrapper {
   border-top: 1px solid var(--outline);
@@ -416,25 +437,38 @@ header {
   margin: 0px 0 0;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .category-items {
-    flex-direction: column;
+    flex-wrap: nowrap;
+    overflow-x: auto;
     gap: 24px;
+    padding: 16px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    scroll-snap-type: x mandatory;
+  }
+
+  .cat {
+    scroll-snap-align: center;
+    flex: 0 0 auto;
+    width: 160px;
   }
 
   .cat-box {
-    width: 180px;
-    height: 180px;
-  }
-
-  .cat p {
-    font-size: 20px;
-    margin-top: 8px;
+    width: 100%;
+    height: 160px;
   }
 
   .cat-img {
-    max-width: 80%;
-    height: auto;
+    width: auto;
+    max-height: 100px;
+  }
+
+  .cat p {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 8px;
   }
 }
 
@@ -531,17 +565,24 @@ header {
   background-color: #a8c390;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .journal-items {
-    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 24px;
-    align-items: center;
+    padding: 16px;
+  }
+
+  .journal-entry {
+    width: 45%; 
+    max-width: 280px;
+    box-sizing: border-box;
   }
 
   .journal-img-box {
-    width: 260px;
+    width: 100%;
     height: auto;
-    padding: 16px;
   }
 
   .journal-img {
@@ -551,17 +592,17 @@ header {
   }
 
   .journal-entry p {
-    font-size: 18px;
+    font-size: 16px;
+    text-align: center;
     margin-top: 8px;
   }
 
   .journal-btn {
-    padding: 10px 24px;
-    font-size: 18px;
+    font-size: 16px;
+    padding: 10px 20px;
     margin-top: 8px;
   }
 }
-
 
 /* =============== Product Detail Page =============== */
 .product-detail {
@@ -673,43 +714,71 @@ footer {
   height: 28px;
   object-fit: contain;
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+  footer {
+    padding: 24px;
+    border-top: 1px solid var(--outline); 
+  }
+
   .footer-main {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    flex-wrap: wrap;
   }
 
   .footer-left {
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 16px;
   }
 
   .footer-logo {
-    height: 60px;
+    height: 100px;
+    width: auto;
   }
 
   .footer-info p {
-    font-size: 12px;
+    font-size: 13px;
+    line-height: 1.4;
+    text-align: left;
   }
 
   .footer-right {
-    align-items: center;
-  }
-
-  .social-icons {
-    justify-content: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
     gap: 8px;
   }
 
-  .footer-year {
-    margin-top: 16px;
+  .social-icons {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    width: 100%;
   }
 
-  .footer-pay-row img {
-    height: 24px;
+  .footer-year {
+    font-size: 14px;
+    text-align: right;
+    margin-top: 24px;
+  }
+
+  .footer-pay-row {
+    text-align: right;
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  .payment-sprite {
+    height: 28px;
+    object-fit: contain;
   }
 }
 
@@ -734,56 +803,36 @@ html, body {
 }
 
 /* =============== Responsive =============== */
-@media (max-width: 768px) {
-  header {
-    border-bottom: none;
-    position: relative;
-  }
-
-  header::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 1px;
-    background-color: var(--outline);
-  }
-
-  .logo {
-    height: 48px;
-  }
-
-  .icon-group {
-    display: flex;
-    gap: 16px;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 8px;
-    margin-top: 10px;
-  }
-
-  .special-offer, .journal {
-    margin: 16px;
-    padding: 16px;
-  }
-
-  .category-items {
-    flex-direction: column;
+@media (max-width: 480px) {
+  .info-bar {
+    width: 100vw;
+    padding: 12px 16px;
+    font-size: 16px;
+    font-family: 'Patrick Hand', cursive;
+    justify-content: center;
     align-items: center;
+    position: relative;
+    text-align: center;
+    border-bottom: 1px solid var(--outline);
+    background-color: #FDFBF7;
   }
 
-  .cat {
-    width: 100%;
-    max-width: 300px;
-  }
-
-  .entry img {
-    max-width: 100%;
+  .info-bar .close-btn {
+    font-size: 20px;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
   }
 }
+
+@media (max-width: 768px) {
+  .footer-main {
+    padding: 0 12px;
+  }
+}
+
+
 
 /* ============ iPhone 12 Pro portrait (390px) ============ */
 @media screen and (max-width: 480px) {
