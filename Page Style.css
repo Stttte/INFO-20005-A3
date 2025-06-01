@@ -398,11 +398,18 @@ html, body {
 /* =============== Responsive =============== */
 @media (max-width: 768px) {
   header {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 24px;
-    flex-wrap: nowrap;
+    border-bottom: none;
+    position: relative;
+  }
+
+  header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: var(--outline);
   }
 
   .logo {
