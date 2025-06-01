@@ -398,26 +398,43 @@ html, body {
 /* =============== Responsive =============== */
 @media (max-width: 768px) {
   header {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    flex-wrap: nowrap;
   }
+
+  .logo {
+    height: 48px;
+  }
+
+  .icon-group {
+    display: flex;
+    gap: 16px;
+  }
+
   .nav-links {
     flex-direction: column;
     gap: 8px;
     margin-top: 10px;
   }
+
   .special-offer, .journal {
     margin: 16px;
     padding: 16px;
   }
+
   .category-items {
     flex-direction: column;
     align-items: center;
   }
+
   .cat {
     width: 100%;
     max-width: 300px;
   }
+
   .entry img {
     max-width: 100%;
   }
