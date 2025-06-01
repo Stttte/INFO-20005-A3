@@ -337,36 +337,176 @@ header {
 }
 
 /* =============== Categories Section =============== */
-.categories {
-  padding: 24px;
+.categories-wrapper {
   border-top: 1px solid var(--outline);
-  margin-top: 32px; 
+  border-bottom: 1px solid var(--outline);
+  margin-bottom: 10px;
+}
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 0 0;
+  padding-bottom: 10px;
 }
 
 .categories h3 {
   font-family: 'Patrick Hand', cursive;
-  font-size: 20px;
-  margin-bottom: 16px;
+  font-size: 50px;
+  text-align: center;
   color: var(--text);
+  margin-top: 0;
+  margin-bottom: 25px;
 }
+
 .category-items {
   display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 110px;
+  flex-wrap: nowrap;
+  padding-bottom: 16px;
 }
+
 .cat {
-  background-color: white;
-  padding: 12px;
-  border-radius: 12px;
-  width: 40%;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  border: 1px solid var(--outline);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
-.cat img {
+
+.cat-box {
+  background-color: white;
+  padding: 16px;
+  border-radius: 20px;
+  border: 2px solid #B6C59A;
+  width: 200px;
+  height: 200px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cat-img {
+  height: auto;
+  display: block;
+}
+
+.drink-img {
   width: 80px;
-  margin-bottom: 8px;
+}
+
+.cake-img {
+  width: 150px;
+}
+
+.toastie-img {
+  width: 110px;
+}
+
+.waffle-img {
+  width: 145px;
+}
+
+.cat p {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 30px;
+  color: var(--text);
+  margin: 0px 0 0;
+}
+
+/* =============== Journal Section =============== */
+.journal {
+  padding: 4px 0 32px; 
+}
+
+.journal h3 {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 50px;
+  text-align: center;
+  color: var(--text);
+  margin-top: 4px;
+  margin-bottom: 20px;
+}
+
+.journal-items {
+  display: flex;
+  justify-content: center;
+  gap: 180px; 
+  flex-wrap: wrap;
+}
+
+.journal-entry {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.journal-img-box {
+  background-color: white;
+  border: 1.5px solid var(--outline);
+  border-radius: 28px;
+  width: 400px;
+  height: 320px;             
+  display: flex;
+  justify-content: center;
+  align-items: center;       
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+
+.journal-img-box {
+  width: 400px;
+  height: 360px;
+  border: 1.5px solid var(--outline);
+  border-radius: 28px;
+  background-color: white;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.journal-img {
+  object-fit: contain;
+  display: block;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.img-left {
+  width: 340px;
+}
+
+.img-right {
+  width: 300px;
+}
+
+.journal-entry p {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 22px;
+  color: var(--text);
+  text-align: center;
+  margin: 0;
+}
+
+.journal-btn {
+  background-color: var(--button);
+  color: var(--text);
+  font-family: 'Fredoka One', cursive;
+  font-size: 24px;
+  border: none;
+  padding: 12px 36px;
+  border-radius: 40px;
+  box-shadow: 4px 4px 0px #7a8e66;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.journal-btn:hover {
+  background-color: #a8c390;
 }
 
 /* =============== Product Detail Page =============== */
@@ -411,7 +551,6 @@ header {
   cursor: pointer;
 }
 
-/* =============== Footer =============== */
 /* =============== Footer =============== */
 footer {
   background-color: var(--bg);
@@ -502,50 +641,6 @@ html, body {
 
 .content {
   flex: 1;
-}
-
-
-
-/* =============== Journal Section =============== */
-.journal {
-  background-color: white;
-  margin: 24px;
-  padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-}
-.journal h3 {
-  font-family: 'Patrick Hand', cursive;
-  font-size: 20px;
-  margin-bottom: 12px;
-  color: var(--text);
-}
-.entries {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-.entry {
-  background: var(--bg);
-  border: 1px solid var(--outline);
-  border-radius: 12px;
-  padding: 16px;
-  text-align: center;
-}
-.entry img {
-  width: 100%;
-  max-width: 240px;
-  border-radius: 12px;
-  margin-bottom: 8px;
-}
-.entry button {
-  background-color: var(--accent);
-  border: none;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-weight: bold;
-  color: var(--text);
-  cursor: pointer;
 }
 
 /* =============== Responsive =============== */
