@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Product List - Snowmoon</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Patrick+Hand&family=Quicksand&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Patrick+Hand&family=Comic+Neue&family=Baloo+2:wght@400;700;900&family=Quicksand&display=swap"
+    rel="stylesheet"
+  />
   <link rel="stylesheet" href="Page-Style.css" />
 </head>
 <body>
@@ -24,12 +27,59 @@
       </div>
     </header>
 
+    <div class="info-bar" id="infoBar">
+    <button class="close-btn" onclick="document.getElementById('infoBar').style.display='none'">&#x2716;</button>
+    $5 MINIMUM Per Person for Dine-in
+  </div>
+    
     <main class="content">
-      <div class="categories">
-        <p>$5 MINIMUM Per Person for Dine-in</p>
+  <div class="category-section">
+    <div class="category-item">
+      <h3 class="category-title">Drink<span class="arrow">&gt;</span></h3>
+      <div class="category-card">
+        <img src="drink.png" alt="Drink">
       </div>
-    </main>
+    </div>
+    <div class="category-item">
+      <h3 class="category-title">Cake<span class="arrow">&gt;</span></h3>
+      <div class="category-card">
+        <img src="cake.png" alt="Cake">
+      </div>
+    </div>
+    <div class="category-item">
+     <h3 class="category-title">Toastie<span class="arrow">&gt;</span></h3>
+      <div class="category-card">
+        <img src="toastie.png" alt="Toastie">
+      </div>
+    </div>
+    <div class="category-item">
+      <h3 class="category-title">Waffle<span class="arrow">&gt;</span></h3>
+      <div class="category-card">
+        <img src="waffle.png" alt="Waffle">
+      </div>
+    </div>
+  </div>
 
+  <div class="promo-section">
+    <div class="promo-card">
+      <div class="promo-text">
+        <h2>Special price for today!!!</h2>
+        <h3>50% discount</h3>
+        <button class="order-btn">order now</button>
+      </div>
+      <div class="promo-image">
+        <img src="strawberry-waffle.png" alt="Strawberry Biscoff Waffle">
+        <p class="promo-label">Strawberry Biscoff Waffle</p>
+      </div>
+    </div>
+    <div class="mascot-container">
+       <img src="cartoon.png" alt="Cartoon Mascot" class="mascot small">
+    </div>
+
+  </div>
+</main>
+
+    
     <footer>
   <div class="footer-main">
     <div class="footer-left">

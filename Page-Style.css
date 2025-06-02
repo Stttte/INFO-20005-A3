@@ -271,7 +271,10 @@ header {
   box-shadow: 5px 5px 0px #7a8e66;
   transition: all 0.2s ease;
   text-transform: lowercase;
+  font-family: 'Baloo 2', cursive;
+  font-weight: 900;
 }
+
 
 .order-button:hover {
   background-color: #A2B98C;
@@ -586,7 +589,7 @@ header {
 }
 
 .journal-entry p {
-  font-family: 'Comic Neue', cursive;
+  font-family: 'Patrick Hand', cursive;
   font-size: 22px;
   color: var(--text);
   text-align: center;
@@ -596,10 +599,11 @@ header {
 .journal-btn {
   background-color: var(--button);
   color: var(--text);
-  font-family: 'Fredoka One', cursive;
+  font-family: 'Baloo 2', cursive;
+  font-weight: 900;
   font-size: 24px;
   border: none;
-  padding: 12px 36px;
+  padding: 12px 20px;
   border-radius: 40px;
   box-shadow: 4px 4px 0px #7a8e66;
   cursor: pointer;
@@ -664,6 +668,243 @@ header {
   margin-bottom: -10px;
 }
 }
+/* =============== List =============== */
+.category-section {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--bg);
+  padding: 24px 0 0;
+}
+
+.category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.category-section::before {
+  content: "";
+  position: absolute;
+  top: 48px;            
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--outline);
+  z-index: 0;
+}
+
+
+.category-title {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Patrick Hand', cursive;
+  font-weight: 400;
+  font-size: 32px;
+  color: var(--text);
+  margin: 0;
+  padding: 0 0 12px;
+  top: -20px;
+  z-index: 1;
+}
+
+.arrow {
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 700;
+  color: #8FA77A;
+  margin-left: 8px;
+  transform: rotate(90deg);
+  position: relative;
+  top: 2px;
+  left: 4px;
+  z-index: 1;
+}
+
+
+.category-title::after {
+  content: none;
+}
+
+.category-card {
+  border: 3px solid #8FA77A;
+  border-radius: 16px;
+  padding: 16px;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;   
+  background-color: #ffffff;
+  z-index: 0;
+}
+
+.category-card img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.promo-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 48px 24px;
+  position: relative;
+}
+
+.promo-card {
+  display: flex;
+  background-color: #FAF8F2;
+  border: 3px solid #8FA77A;
+  border-radius: 16px;
+  box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1);
+  width: 60%;
+  overflow: hidden;
+}
+
+.promo-text {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;   
+  justify-content: center; 
+  text-align: center;    
+}
+
+.promo-text h2 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 40px;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.promo-text h3 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 28px;
+  color: #F9C94C;
+  margin-bottom: 24px;
+}
+
+.order-btn {
+  width: 210px;
+  height: 37px;
+  background-color: #B6C59A;
+  border: 1px solid #7E9769;
+  border-radius: 30px;
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 3px 3px 0px #7a8e66;
+}
+
+
+.order-btn:hover {
+  background-color: #A2B98C;
+}
+
+.promo-image {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.promo-image img {
+  max-width: 80%;
+  height: auto;
+}
+
+.promo-label {
+  font-family: 'Patrick Hand', sans-serif;
+  font-size: 18px;
+  color: var(--text);
+  margin-top: 12px;
+  text-align: center;
+}
+
+.mascot-container {
+  position: absolute;
+  top: 77%;
+  right: 100px;
+  transform: translateY(-80%);
+}
+
+.mascot {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
+.mascot.small {
+  max-width: 300px;
+}
+
+.mascot.large {
+  max-width: 400px;
+}
+
+@media screen and (max-width: 390px) {
+  .categories-wrapper {
+    padding: 12px 8px;
+  }
+
+  .category-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 0 4px;
+  }
+
+  .cat {
+    width: 46%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .cat-box {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    padding: 6px;
+    border: 2px solid #8FA77A;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cat-img {
+    width: 70%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .cat p {
+    font-size: 14px;
+    margin: 0;
+    text-align: center;
+    font-family: 'Patrick Hand', cursive;
+    color: var(--text);
+  }
+}
+
+
+
 /* =============== Product Detail Page =============== */
 .product-detail {
   display: flex;
@@ -778,7 +1019,6 @@ footer {
 
 @media screen and (max-width: 480px) {
   
-
   footer {
     position: relative !important;
     transform-origin: top left !important;
@@ -869,12 +1109,6 @@ footer {
     object-fit: contain !important;
   }
 }
-
-
-
-
-
-
 
 /* =============== Sticky Footer =============== */
 
