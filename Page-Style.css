@@ -823,7 +823,7 @@ footer {
     min-width: 0 !important;
   }
   .footer-info p {
-    font-size: 1px !important;
+    font-size: 10px !important;
     line-height: 1 !important;
     margin: 0 !important;
     white-space: normal !important;
