@@ -861,13 +861,13 @@ footer {
   }
  .footer-pay-row {
     position: absolute;
-    bottom: 45px;       /* 距离 footer 底部 16px，可按需微调 */
-    right: 16px;        /* 距离 footer 右侧 16px，可按需微调 */
-    margin: 0;          /* 去掉原来可能有的 margin-top */
-    width: auto;        /* 自适应宽度，不撑满整行 */
-    text-align: right;  /* 如果有多个支付图标，保持右对齐 */
-    display: flex;      /* 如果有多张图可以横向排列 */
-    gap: 8px;           /* 图标间距，可根据实际图标尺寸调整 */
+    bottom: 45px;       
+    right: 10px;        
+    margin: 0;          
+    width: auto;        
+    text-align: right;  
+    display: flex;      
+    gap: 8px;          
   }
   .payment-sprite {
     height: 20px !important;
