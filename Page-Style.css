@@ -777,12 +777,7 @@ footer {
 }
 
 @media screen and (max-width: 480px) {
-  html, body {
-    -webkit-text-size-adjust: none !important;
-    -moz-text-size-adjust: none !important;
-    -ms-text-size-adjust: none !important;
-    text-size-adjust: none !important;
-  }
+  
 
   footer {
     position: relative !important;
@@ -823,7 +818,7 @@ footer {
     min-width: 0 !important;
   }
   .footer-info p {
-    font-size: 20px !important;
+    font-size: 10px !important;
     line-height: 1 !important;
     margin: 0 !important;
     white-space: normal !important;
