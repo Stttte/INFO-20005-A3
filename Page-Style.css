@@ -1560,7 +1560,8 @@ footer {
     position: relative !important;
     transform-origin: top left !important;
     transform: scale(0.5) !important;                
-    width: calc(100% / 0.5) !important;  
+    width: calc(100% / 0.5) !important;
+    border-top: 2px solid black !important;
   }
 
   .footer-main {
