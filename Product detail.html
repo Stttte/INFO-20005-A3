@@ -5,7 +5,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Strawberry Biscoff Waffle - Snowmoon</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Patrick+Hand&family=Quicksand&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Patrick+Hand&family=Comic+Neue&family=Baloo+2:wght@400;700;900&family=Quicksand&display=swap"
+    rel="stylesheet"
+  />
   <link rel="stylesheet" href="Page-Style.css" />
   <link
     href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&display=swap"
@@ -28,26 +31,32 @@
     </div>
   </header>
 
-  <main class="content">
+  
+<main class="content">
+  <div class="product-wrapper">
     <div class="product-detail">
       <div class="product-image">
-        <img src="biscoff.png" alt="Strawberry Biscoff Waffle" />
+        <img src="strawberry-waffle.png" />
       </div>
       <div class="product-info">
         <h1>Strawberry Biscoff Waffle</h1>
         <p>Eggs Waffle with Biscoff and Strawberry with Coconut Ice Cream, Whipped Cream and strawberry sauce</p>
         <div>
           <span class="price">AU$8.75</span>
-          <span class="original-price">AU$17.50</span>
+          <span class="original-price-wrapper">
+            <span class="original-price">AU$17.50</span>
+          </span>
         </div>
-        <div class="quantity">
-          <button>-</button>
-          <span>1</span>
-          <button>+</button>
+        <div class="quantity-control">
+          <button class="qty-btn minus">−</button>
+          <div class="qty-display">1</div>
+          <button class="qty-btn plus">+</button>
         </div>
       </div>
     </div>
-  </main>
+  </div>
+</main>
+
 
   <script>
     const qty = document.querySelector('.quantity');
@@ -64,6 +73,7 @@
       };
     }
   </script>
+  
 
   <footer>
   <div class="footer-main">
