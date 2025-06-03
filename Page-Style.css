@@ -710,16 +710,15 @@ header {
 }
 
 .arrow {
-  display: inline-block;
-  font-size: 24px;
-  font-weight: 700;
-  color: #8FA77A;
+  width: 20px;
+  height: 20px;
   margin-left: 8px;
-  transform: rotate(90deg);
-  position: relative;
-  top: 2px;
-  left: 4px;
-  z-index: 1;
+  stroke: #8FA77A;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 
@@ -854,54 +853,135 @@ header {
   max-width: 400px;
 }
 
-@media screen and (max-width: 390px) {
-  .categories-wrapper {
-    padding: 12px 8px;
-  }
-
-  .category-items {
+.mobile-category-list {
+  display: none;
+}
+@media screen and (max-width: 480px) {
+  .category-section {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 12px;
-    padding: 0 4px;
+    gap: 8px;
+    padding: 12px;
   }
 
-  .cat {
-    width: 46%;
+  .category-item {
+    flex: 0 0 calc(50% - 8px);
+    max-width: calc(50% - 8px);
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
   }
 
-  .cat-box {
+  .category-title {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 4px;
+    font-family: 'Comic Neue', cursive !important;
+    font-weight: bold;
+  }
+
+   .mascot {
+    display: none !important;
+  }
+
+  .promo-section {
+    display: none !important;
+  }
+
+  .category-section::before {
+    display: none !important;
+  }
+
+  .arrow {
+    display: none !important;
+  }
+
+  .category-title {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+    font-size: 24px;
+    margin-top: 20px; 
+    text-align: center;
+  }
+
+  .category-card {
     width: 100%;
     aspect-ratio: 1 / 1;
+    width: 124px;  
+    height: 124px;
     padding: 6px;
     border: 2px solid #8FA77A;
     border-radius: 12px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.05);
     background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  .cat-img {
-    width: 70%;
-    height: auto;
+  .category-card img {
     object-fit: contain;
   }
 
-  .cat p {
-    font-size: 14px;
-    margin: 0;
-    text-align: center;
+  .drink-img {
+  width: 60px;
+  height: 80px;
+}
+
+.cake-img {
+  width: 72px;
+  height: 72px;
+}
+
+.toastie-img {
+  width: 44px;
+  height: auto;
+}
+
+.waffle-img {
+  width: 50px;
+  height: 50px;
+}
+.mobile-category-list {
+    display: block;
+    margin: 10px 0;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .category-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 12px;
+    border-bottom: 1px solid #ccc;
+    background-color: #FAF8F2;
+  }
+
+
+   .category-name {
+    font-size: 36px;
     font-family: 'Patrick Hand', cursive;
     color: var(--text);
+    padding-left: 8px;
   }
+
+ .category-arrow svg {
+    width: 20px;
+    height: 20px;
+    display: block;
+    padding-right: -14px;
+    stroke-width: 2;
+  }
+
+  .category-row:last-child {
+    border-bottom: none;
+  }
+
 }
+
 
 
 
