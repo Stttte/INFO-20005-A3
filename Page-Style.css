@@ -226,10 +226,31 @@ header {
   margin: 0;
 }
 
+.order-button {
+  width: 300px;
+  height: 45px;
+  background-color: #B6C59A;
+  border: 1px solid #7E9769;
+  border-radius: 30px;
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 3px 3px 0px #7a8e66;
+}
+
+.order-button:hover {
+  background-color: #A2B98C;
+}
+
 .offer-cartoon {
   position: absolute;
-  bottom: -100px;
-  right: 0px;
+  bottom: 220px;
+  right: 15px;
   width: 250px;      
   height: auto;       
   max-width: 250px;    
@@ -256,28 +277,8 @@ header {
   flex-direction: column;
   align-items: flex-start;
   transform: translateX(-90px); 
-  gap: 30px;
-}
-
-.order-button {
-  background-color: var(--button);
-  color: var(--text);
-  border: none;
-  padding: 16px 36px;
-  border-radius: 36px;
-  font-size: 24px;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 5px 5px 0px #7a8e66;
-  transition: all 0.2s ease;
-  text-transform: lowercase;
-  font-family: 'Baloo 2', cursive;
-  font-weight: 900;
-}
-
-
-.order-button:hover {
-  background-color: #A2B98C;
+  margin-top: -4px;
+  gap: 40px;
 }
 
 .offer-image-text {
@@ -292,17 +293,20 @@ header {
   font-size: 20px;
   color: var(--text);
 }
-
-@media (max-width: 480px) {
+.mobile-order-btn-wrapper {
+  display: none;
+}
+  @media (max-width: 480px) {
   .special-offer {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px 16px;
-    gap: 8px;
-  }
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  gap: 8px;
+}
 
-  .annotated-image-text {
+
+ .annotated-image-text {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -356,13 +360,15 @@ header {
     flex-direction: column;
     align-items: flex-start;
     transform: none !important;
+    margin-top: -10px;
+
   }
 
   .offer-title h2,
   .title-second {
     font-size: 22px;
     line-height: 1.2;
-    margin: 0;
+    
   }
 
   .discount-container {
@@ -381,10 +387,40 @@ header {
   }
 
   .order-button {
-    font-size: 16px;
-    padding: 10px 20px;
-    margin: 0;
+    display: none !important;
   }
+
+  .mobile-order-btn-wrapper {
+    display: block;
+    justify-content: center;
+  }
+
+  .mobile-order-btn {
+    display: block;
+    width: 100px;
+    height: 20px;
+    background-color: #B6C59A;
+    border: 1px solid #A0B38C;
+    border-radius: 30px;
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--text);
+    box-shadow: 3px 3px 0px #7a8e66;
+    cursor: pointer;
+    margin-top: -2px;
+    margin-left: 0;
+    margin-right: auto;
+    margin: -6px auto 0 auto;
+    padding-top: -4px;        
+    padding-bottom: 2px;
+  }
+
+  .mobile-order-btn:hover {
+    background-color: #A2B98C;
+  }
+  
 }
 
 /* =============== Categories Section =============== */
@@ -597,22 +633,26 @@ header {
 }
 
 .journal-btn {
-  background-color: var(--button);
-  color: var(--text);
-  font-family: 'Baloo 2', cursive;
+  width: 250px;
+  height: 45px;
+  background-color: #B6C59A;
+  border: 1px solid #7E9769;
+  border-radius: 30px;
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 30px;
   font-weight: 900;
-  font-size: 24px;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 40px;
-  box-shadow: 4px 4px 0px #7a8e66;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  transition: 0.2s ease;
+  box-shadow: 3px 3px 0px #7a8e66;
 }
 
 .journal-btn:hover {
-  background-color: #a8c390;
+  background-color: #A2B98C;
 }
+
 @media screen and (max-width: 400px) {
   .journal-items {
   display: flex;
@@ -662,11 +702,17 @@ header {
 }
 
 .journal-btn {
-  font-size: 12px;
+  width: 100px;
+  height: 22px;
+  font-size: 14px;
   padding: 6px 12px;
-  margin-top: 4px;
+  margin-top: 6px;
   margin-bottom: -10px;
+  border-radius: 20px;
+  font-weight: 700;
+  box-shadow: 2px 2px 0px #7a8e66;
 }
+
 }
 /* =============== List =============== */
 .category-section {
@@ -998,7 +1044,8 @@ header {
  display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 70px;
+  margin-top: 60px;
+  margin-left: 40px;
 }
 
 .product-image img {
@@ -1006,6 +1053,10 @@ header {
   border-radius: 12px;
 }
 
+.label {
+  font-family: 'Patrick Hand', cursive; 
+  font-size: 22px;
+}
 .product-info {
   flex: 1;
   display: flex;
@@ -1019,7 +1070,7 @@ header {
   color: #2E3A4C;
   text-align: center;
   width: 100%;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 
@@ -1027,13 +1078,15 @@ header {
   color: #F9C94C;
   font-size: 36px;
   font-family: 'Patrick Hand', cursive;
-  margin-left: 40px;
+  margin-left: 25px;
+  margin-top: 20px;
 }
 
 .original-price-wrapper {
   position: relative;
   display: inline-block;
-  margin-left: 250px;
+  margin-left: 175px;
+  margin-top: 20px;
 }
 
 .original-price {
@@ -1055,12 +1108,13 @@ header {
   transform: rotate(5deg);
   transform-origin: left center;
   z-index: 2;
+ 
 }
 
 .product-info p {
   margin-top: 20px;
   font-size: 24px;
-  margin-left: 80px;
+  margin-left: 50px;
 }
 
 .product-info div {
@@ -1072,20 +1126,28 @@ header {
 }
 .quantity-control {
   display: flex;
+  align-items: center;
+  height: 40px;
+  width: 240px;
   background-color: #b6c59a;
   border: 2px solid #8fa77a;
   border-radius: 999px;
+  box-shadow: 3px 3px 0px #7E9769;
   overflow: hidden;
-  box-shadow: 4px 4px 0px rgba(143, 167, 122, 0.3);
   font-family: 'Baloo 2', cursive;
-  margin-top: 20px;
+  transform: none !important; 
+  align-self: flex-end;
+  margin-right: 35px;
 }
 
-.qty-btn, .qty-display {
-  background-color: transparent;
+
+.qty-btn {
+  flex: 1;
+  background: transparent;
   border: none;
-  font-size: 28px;
-  padding: 12px 28px;
+  font-size: 32px;
+  font-weight: bold;
+  font-family: 'Baloo 2', cursive;
   color: #2E3A4C;
   cursor: pointer;
   display: flex;
@@ -1093,13 +1155,27 @@ header {
   justify-content: center;
 }
 
+
 .qty-display {
-  min-width: 40px;
-  border-left: 1px solid #8fa77a;
-  border-right: 1px solid #8fa77a;
-  pointer-events: none;
+  flex: 1;
+  font-size: 32px;
+  font-weight: bold;
+  font-family: 'Baloo 2', cursive;
+  color: #2E3A4C;
+  display: flex;
+  align-items: flex-end;  
+  justify-content: center;
+  padding-bottom: 20px; 
 }
 
+
+.divider {
+  width: 1.5px;
+  height: 80px; 
+  background-color: #6b885e;
+  align-self: center;
+  margin-top: -10px; 
+}
 
 .content {
   max-width: none !important;
@@ -1109,7 +1185,7 @@ header {
 
 .product-wrapper {
   width: 1312px;              
-  height: 600px;
+  height: 580px;
   background-color: #FAF8F2;
   border: 3px solid #8FA77A;
   border-radius: 24px;
@@ -1117,8 +1193,297 @@ header {
   margin: 48px auto;
   max-width: 100000000px;
   box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  overflow: visible !important;
 }
+
+.full-divider {
+  display: none;                  
+  border: none;                   
+  border-bottom: 1px solid #D6D6D6; 
+  width: 100%;                   
+  margin: -8px 0;
+}
+
+.full-divider-2 {
+  display: none;
+  border: none;
+  border-bottom: 1px solid #D6D6D6;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.extra-tasty-section {
+  display: none;
+}
+
+.hero-mobile {
+  display: none;
+}
+@media screen and (max-width: 480px) {
+  .full-divider {
+    display: block;
+  }
+
+  .full-divider-2 {
+    display: block;
+  }
+
+  .product-wrapper {
+    width: 100% !important;
+    padding: 8px !important;
+    box-sizing: border-box;
+    border: none !important;
+    background: none !important;
+    box-shadow: none !important;
+    height: auto !important;
+    margin: 12px auto !important;
+  }
+
+  .product-detail {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 0 !important;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .product-image {
+    flex: 0 0 45%;
+    max-width: 45%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .product-image img {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 23px;
+  }
+
+  .product-info > div:first-of-type {
+    margin-top: -12px;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    margin-top: 5px;
+    margin-bottom: 4px;
+    gap: 60px;
+  }
+
+  .product-info h1 {
+    font-size: 16px;
+    margin-top: 8px;
+    margin-left:-15px;
+    line-height: 1.2;
+  }
+
+  .product-info p {
+    font-size: 10px;
+    line-height: 1.3;
+    margin-top: 0px;
+    margin-left:-2px;;
+  }
+
+  .product-info > div:first-of-type .price {
+  font-size: 14px;
+  color: #F9C94C;
+  display: inline-block;
+  margin: 0;
+}
+
+  .product-info > div:first-of-type .original-price-wrapper {
+    display: inline-block;
+    margin: 0;
+  }
+
+  .product-info > div:first-of-type .original-price {
+    font-size: 14px;
+    color: #2E3A4C;
+  }
+
+  .quantity-control {
+    position: relative;      
+    top: -18px;   
+    width: 100%;
+    max-width: 100px;
+    height: 16px;
+    transform: none !important;
+    font-size: 14px;
+    margin-right: 28px;
+    border: 1px solid #8fa77a;
+    box-shadow: 1.5px 1.5px 0px #7e9769;
+  }
+
+  .product-info {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.quantity-control {
+  margin-bottom: 0;
+}
+
+  .qty-btn {
+    font-size: 18px;
+  }
+
+  .qty-display {
+    font-size: 18px;
+    padding-bottom: 20px;
+  }
+
+  .divider {
+    height: 50px;
+    margin-top: 0;
+  }
+
+  .product-wrapper {
+    border: none !important;
+    box-shadow: none !important;
+    background: none !important;
+    padding: 0 !important;
+    margin: 12px auto !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .extra-tasty-section {
+    display: block;
+    margin: 16px 0;
+    padding: 0;
+  }
+
+  .extra-tasty-title {
+    font-family: 'Patrick Hand', sans-serif;
+    font-size: 28px;
+    color: var(--text);
+    margin: 0 0 12px 12px;
+    font-weight: 300;
+  }
+
+  .extra-tasty-items {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0 12px;
+    list-style: none;
+  }
+
+  .tasty-item {
+    flex: 0 0 calc((100% - 18px) / 4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .tasty-img-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border: 2px solid #B6C59A;
+    border-radius: 12px;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tasty-img-wrapper img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .img-pink {
+    width: 35px;      
+    height: 35px;       
+    object-fit: cover;   
+  }
+
+  .img-cheesecake {
+    max-width: 100%;
+    height: 80px;        
+    object-fit: cover;
+  }
+
+  .img-milo {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+  }
+
+  .img-cocoa {
+    width: 35px;
+    height: 38px;
+    object-fit: cover;
+  }
+
+  .tasty-name {
+    font-family: 'Comic Neue', sans-serif;
+    font-size: 6px;
+    font-weight: bold;
+    text-align: center;
+    color: var(--text);
+    margin: 0;
+    line-height: 1.5em;
+  }
+
+  .hero-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 16px 12px;
+  }
+
+  .hero-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .hero-text h2 {
+    font-family: 'Fredoka One', sans-serif;
+    font-size: 22px;
+    color: #377DAB;
+    line-height: 1.2;
+    margin: 0;
+    font-weight: 300;
+    text-align: center; 
+  }
+
+  .hero-button {
+    width: 140px;
+    height: 36px;
+    background-color: #B6C59A;
+    border: 1px solid #A0B38C;
+    border-radius: 30px;
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 3px 3px 0px #7a8e66;
+    cursor: pointer;
+    margin-left: 57px;
+  }
+
+  .hero-image img {
+    width: 120px;
+    height: auto;
+    display: block;
+    margin-top: 10px;
+  }
+}
+
 /* =============== Footer =============== */
 footer {
   background-color: var(--bg);

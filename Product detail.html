@@ -36,8 +36,15 @@
   <div class="product-wrapper">
     <div class="product-detail">
       <div class="product-image">
-        <img src="strawberry-waffle.png" />
+        <div class="annotated-image detail-annotated">
+          <img src="strawberry-waffle.png" alt="Strawberry Biscoff Waffle">
+          <div class="label strawberry">Strawberry</div>
+          <div class="label biscoff">Biscoff</div>
+          <div class="label coconut">Coconut Ice Cream</div>
+          <div class="label eggs">Eggs Waffle</div>
+        </div>
       </div>
+
       <div class="product-info">
         <h1>Strawberry Biscoff Waffle</h1>
         <p>Eggs Waffle with Biscoff and Strawberry with Coconut Ice Cream, Whipped Cream and strawberry sauce</p>
@@ -49,14 +56,60 @@
         </div>
         <div class="quantity-control">
           <button class="qty-btn minus">−</button>
-          <div class="qty-display">1</div>
+          <div class="divider"></div>
+          <div class="qty-display">- -</div>
+          <div class="divider"></div>
           <button class="qty-btn plus">+</button>
         </div>
       </div>
+    </div> 
+  </div> 
+ <hr class="full-divider">
+ <section class="extra-tasty-section">
+    <h2 class="extra-tasty-title">Make extra tasty</h2>
+    <ul class="extra-tasty-items">
+  <li class="tasty-item pink-milk">
+    <div class="tasty-img-wrapper">
+      <img src="drink.png" alt="Pink milk" class="img-pink">
     </div>
+    <p class="tasty-name">Pink milk</p>
+  </li>
+
+  <li class="tasty-item strawberry-cheesecake">
+    <div class="tasty-img-wrapper">
+      <img src="cake.png" alt="Snow Strawberry Cheesecake" class="img-cheesecake">
+    </div>
+    <p class="tasty-name">Snow Strawberry Cheesecake</p>
+  </li>
+
+  <li class="tasty-item milo-bread">
+    <div class="tasty-img-wrapper">
+      <img src="toastie.png" alt="Milo Milk bread" class="img-milo">
+    </div>
+    <p class="tasty-name">Milo Milk bread</p>
+  </li>
+
+  <li class="tasty-item cocoa-tea">
+    <div class="tasty-img-wrapper">
+      <img src="choco.png" alt="Cocoa Milk Tea" class="img-cocoa">
+    </div>
+    <p class="tasty-name">Cocoa Milk Tea</p>
+  </li>
+</ul>
+  </section>
+  <hr class="full-divider-2">
+<section class="hero-mobile">
+  <div class="hero-text">
+    <h2>Chill, snack, smile — it’s a Snow Moon day!</h2>
+    <button class="hero-button">Explore more</button>
   </div>
+  <div class="hero-image">
+    <img src="cartoon.png" alt="Snow Moon mascot" />
+  </div>
+</section>
 </main>
 
+  
 
   <script>
     const qty = document.querySelector('.quantity');
