@@ -1858,53 +1858,202 @@ header {
   background-color: #ddcd70;
 }
 
-
-
-
-
 @media screen and (max-width: 480px) {
   .cart-main {
-    flex-direction: column;
-    gap: 16px;
-    padding: 16px;
+    flex-direction: row;
+    gap: 12px;
+    padding: 0px;
   }
-  .cart-panel,
-  .pay-panel {
-    width: 100%;
-    padding: 16px;
+
+  .cart-panel .panel-title {
+    font-size: 64px; 
+    margin-left: -6px;
+    margin-top: -20px;
+    line-height: 1.1;     
   }
+
+  .cart-panel .panel-note {
+    font-size: 15px;  
+    margin-top: -10px;
+    margin-right: -20px;  
+    line-height: 1.2;
+  }
+
   .cart-item {
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
+    padding: 12px 0;
   }
-  .item-img {
+
+  .small-frame {
+    width: 80px;
+    height: 80px;
+    margin: 0;
+    border-radius: 6px;
+    border: 1px solid #8FA77A;
+    overflow: hidden;
+  }
+  .small-frame img {
     width: 100%;
-    max-width: 200px;
-    margin-bottom: 8px;
+    height: 100%;
+    object-fit: contain;
   }
+
+  .item-info {
+    width: 100%;
+  }
+  .item-name {
+    font-size: 20px;
+    margin: 4px 0 4px 0;
+  }
+  .item-desc {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
   .item-price {
-    text-align: left;
+    font-size: 20px;
+    margin: 8px 0 0 0;
     min-width: auto;
+    text-align: left;
   }
-  .item-actions {
+  .price-icon {
+    margin-left: 8px;
+    margin-top: 0;
+    width: 20px;
+    height: 20px;
+  }
+
+  .quantity-control {
+    position: static;
     margin-top: 8px;
-  }
-  .pay-panel input[type="text"] {
+    width: 120px;
+    height: 32px;
+    background-color: #B6C59A;
+    border: 2px solid #8FA77A;
+    border-radius: 999px;
+    box-shadow: 3px 3px 0px #7E9769;
+    font-family: 'Baloo 2', cursive;
     font-size: 14px;
   }
-  .input-label {
-    font-size: 16px;
+  .qty-btn {
+    font-size: 18px;
+    flex: 1;
   }
-  .total-label,
-  .total-price {
+  .qty-display {
+    font-size: 18px;
+  }
+  .divider {
+    height: 24px;
+  }
+
+  .total-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-top: 12px;
+    border-top: 1px solid var(--color-text-dark);
+    margin-top: 12px;
+    margin-bottom: 4px;
+  }
+  .total-label {
     font-size: 24px;
   }
-  .checkout-btn {
+  .total-price {
+    font-size: 24px;
+    margin-right: 0;
+  }
+
+  .total-divider {
+    display: none;
+  }
+
+  .checkout-button-row {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 8px;
+  }
+
+  .action-button-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+  }
+
+  .icon-button-green {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    background-color: #B6C59A;
+    border: 2px solid #8FA77A;
+    border-radius: 999px;
+    box-shadow: 4px 4px 0px rgba(126, 151, 105, 1);
+    padding: 0 12px;
+    gap: 12px;
+  }
+  .icon-button-green:hover {
+    background-color: #A2B98C;
+  }
+
+  .icon-button-green .btn-icon:first-of-type {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+  }
+  .icon-button-green .btn-icon:last-of-type {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+  }
+
+  .divider-vertical {
+    width: 2px;
+    height: 100%;
+    background-color: #8FA77A;
+    align-self: stretch;
+    margin: 0 8px;
+  }
+
+  .icon-button-yellow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    padding: 0 16px;
+    background-color: #FBE56E;
+    border: 2px solid #D6BA23;
+    border-radius: 999px;
+    box-shadow: 4px 4px 0px #F9C94C;
     font-size: 18px;
-    padding: 6px 20px;
+    font-family: 'Baloo 2', cursive;
+    font-weight: 700;
+    color: #2E3A4C;
+    cursor: pointer;
+    width: 80%;
+    max-width: 200px;
+  }
+  .icon-button-yellow:hover {
+    background-color: #DDCD70;
+  }
+  
+.cart-panel,
+.pay-panel {
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.small-frame {
+    display: none;
   }
 }
+
+
 
 /* =============== Footer =============== */
 footer {
