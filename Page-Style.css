@@ -170,8 +170,6 @@ header {
   margin-bottom: 8px;
   line-height: 1.4;
 }
-
-
 @media screen and (max-width: 480px) {
   #searchModal .fancy-search-box {
     width: 290px;
@@ -2019,11 +2017,9 @@ header {
   align-items: center;
   gap: 16px;
   padding: 16px 0;
-  border-bottom: none;
 }
 
 .cart-item + .cart-item {
-  border-top: none;
   margin: 0;
   padding-top: 16px;
   width: 100%;
@@ -2319,6 +2315,66 @@ header {
   background-color: #ddcd70;
 }
 
+.cart-item {
+  padding: 12px 0;
+  border-bottom: none;
+  position: relative;
+}
+
+.cart-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background-color: #2E3A4C;
+  transform: translateX(-24px);
+  width: calc(100% + 48px);
+}
+
+.cart-item:last-child::after {
+  display: none;
+}
+
+.empty-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 64px 16px;
+}
+
+.empty-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border: 4px solid #8FA77A;
+  border-radius: 24px;
+  width: 1263px;
+  height: 638px;
+  background-color: #FAF8F2;
+  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25);
+  padding: 64px;
+  text-align: left;
+  gap: 64px;
+}
+
+.empty-text {
+  font-family: 'Comic Neue', sans-serif;
+  font-size: 96px;
+  font-weight: 700;
+  color: #2E3A4C;
+  line-height: 1.4;
+  flex: 1;
+}
+
+.empty-img {
+  width: 380px;
+  height: auto;
+  flex-shrink: 0;
+}
+
 @media screen and (max-width: 480px) {
   .cart-main {
     display: flex;
@@ -2558,8 +2614,42 @@ header {
   .pay-panel input[type="text"] {
     display: none;
 }
-}
+  .cart-item + .cart-item {
+    margin-top: 12px;
+  }
 
+.empty-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 16px;
+    border-radius: 16px;
+    border: 2px solid #A0B38C;
+    background-color: #FAF8F2;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+    max-width: 250px;
+    height: 300px;
+    margin: 24px auto;
+    gap: 16px;
+  }
+
+  .empty-text {
+    font-family: 'Comic Neue', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #2E3A4C;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  .empty-img {
+    width: 120px;
+    height: auto;
+    margin-left: 80px;
+  }
+
+}
 
 /* =============== Footer =============== */
 footer {
@@ -2630,6 +2720,7 @@ footer {
   height: 28px;
   object-fit: contain;
 }
+
 
 @media screen and (max-width: 480px) {
   
@@ -2743,4 +2834,307 @@ html, body {
 
 .content {
   flex: 1;
+}
+/* =============== Button Setting =============== */
+.qt-btn,
+.q-btn,
+.qcart-btn,
+.qt-display,
+.q-display,
+.qcart-display {
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 22px;
+  letter-spacing: 0;
+  color: #2E3A4C;
+}
+
+@media screen and (max-width: 480px) {
+  .qt-display,
+  .q-display {
+    font-size: 10px;
+    min-width: 24px;
+    text-align: center;
+    color: #2E3A4C;
+  }
+}
+
+/* =============== checkout =============== */
+.popup-message {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #8FA77A;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 9999;
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 16px;
+  pointer-events: none;
+}
+
+.popup-message.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(10px);
+}
+
+/* =============== thank page =============== */
+.payment-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.35);
+  display: none; 
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.payment-popup {
+  width: 501px;
+  height: 477px;
+  background-color: #FAF8F2;
+  border-radius: 16px;
+  border: 4px solid #B6C59A;
+  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  cursor: default;
+}
+
+.payment-text {
+  font-family: 'Comic Neue', cursive;
+  font-size: 64px;
+  color: #2E3A4C;
+  margin-top: 10px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.payment-img {
+  margin-top: 16px;
+  width: auto;
+  height: 200px;
+  margin-left: 220px;
+}
+
+.popup-message {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #8FA77A;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
+
+.popup-message.show {
+  opacity: 1;
+}
+
+
+@media screen and (max-width: 480px) {
+  .payment-popup {
+    width: 227px !important;
+    height: 274px !important;
+  }
+
+  .payment-text {
+    font-size: 32px !important;
+    line-height: 1.2 !important;
+    margin-top: 10px !important;
+  }
+
+  .payment-img {
+    height: 100px !important;
+    margin-top: 12px !important;
+    margin-left: 80px !important;
+  }
+}
+/* =============== List diff act =============== */
+  .product-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  display: none;
+  z-index: 999;
+}
+
+.product-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fffdf8;
+  border: 3px solid #A0B38C;
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 rgba(126, 151, 105, 0.5);
+  padding: 24px;
+  display: none;
+  z-index: 1000;
+  width: 823px;
+  max-width: 900px;
+  height: 374px;
+}
+
+.product-popup h2 {
+  font-family: 'Patrick Hand', sans-serif;
+  font-size: 48px;
+  margin-bottom: 5px;
+  color: #2E3A4C;
+  margin-top: -25px;
+}
+
+.product-popup .popup-items {
+  display: flex;
+  justify-content: space-around;
+  gap: 16px;
+}
+
+.product-popup .popup-item {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+}
+
+.popup-img-wrapper {
+  width: 260px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.product-popup .popup-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  border-radius: 0 !important;
+  cursor: pointer;
+}
+
+.product-popup .popup-item p {
+  margin-top: 12px;
+  font-family: 'Patrick Hand', sans-serif;
+  font-size: 18px;
+}
+
+
+
+    .mobile-sublist {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.mobile-sublist.expanded {
+  max-height: 400px;
+}
+
+.mobile-sublist .sublist-items {
+  display: flex;
+  gap: 12px;
+  padding: 12px 0;
+}
+
+.mobile-sublist .sublist-item {
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.strawberry-sublist-img {
+  width: 92px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 2px 2px 0 rgba(126, 151, 105, 0.5);
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.cream-sublist-img {
+  width: 80px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 2px 2px 0 rgba(126, 151, 105, 0.5);
+  cursor: pointer;
+}
+
+.mobile-sublist .sublist-item p {
+  margin-top: 6px;
+  font-family: 'Patrick Hand', sans-serif;
+  font-size: 16px;
+  color: #2E3A4C;
+}
+
+
+    @media (max-width: 480px) {
+      .product-popup,
+      .product-popup-overlay {
+        display: none !important;
+      }
+      .product-popup-overlay {
+    display: none !important;
+    pointer-events: none !important;
+  }
+  .product-popup {
+    display: none !important;
+  }
+  .mobile-sublist .sublist-item,
+  .mobile-sublist .sublist-item img {
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+  }
+
+    @media (min-width: 481px) {
+      .mobile-sublist {
+        display: none !important;
+      }
+    }
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.bouncing-mascot {
+  animation: bounce 2s ease-in-out infinite;
 }
