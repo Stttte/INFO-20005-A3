@@ -12,19 +12,45 @@
 </head>
 <body>
   <header>
+  <a href="index.html">
     <img src="logo.png" alt="Snowmoon Logo" class="logo" />
-    <div class="icon-group">
-      <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8FA77A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="11" cy="11" r="8"></circle>
-        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-      </svg>
+  </a>
+  <div class="icon-group">
+    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8FA77A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </svg>
+
+    <a href="Cart.html">
       <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="#8FA77A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
         <circle cx="9" cy="21" r="1"></circle>
         <circle cx="20" cy="21" r="1"></circle>
         <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61l1.38-7.39H6" />
       </svg>
-    </div>
-  </header>
+    </a>
+  </div>
+</header>
+
+<div id="searchOverlay" class="overlay" style="display: none;"></div>
+<div id="searchModal" class="search-modal" style="display: none;">
+<div class="fancy-search-box">
+  <svg class="searching" xmlns="http://www.w3.org/2000/svg"
+       width="24" height="24" viewBox="0 0 24 24"
+       fill="none" stroke="#2E3A4C" stroke-width="2"
+       stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="11" cy="11" r="8"></circle>
+    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+  <div class="input-wrapper">
+    <input type="text" id="searchInput" />
+    <span class="custom-placeholder" id="placeholderText">Searching...</span>
+  </div>
+  <button id="searchClose" class="close-btn">
+    <img src="dark-close.svg" class="close-icon-img" />
+  </button>
+</div>
+<ul id="suggestionList" class="suggestion-list"></ul>
+</div>
 
   <main class="cart-main">
   <section class="cart-panel">
@@ -44,12 +70,12 @@
         </div>
         <div class="item-price">AU$8.75</div>
         <img src="trash box.svg" alt="Icon" class="price-icon" />
-        <div class="quantity-control">
-      <button class="qty-btn minus">−</button>
+        <div class="qcart-control">
+      <button class="qcart-btn minus">−</button>
       <div class="divider"></div>
-      <div class="qty-display">1</div>
+      <div class="qcart-display">1</div>
       <div class="divider"></div>
-      <button class="qty-btn plus">+</button>
+      <button class="qcart-btn plus">+</button>
     </div>
       </div>
       <hr class="panel-divider new-divider" />
@@ -65,12 +91,12 @@
         </div>
         <div class="item-price">AU$20.90</div>
         <img src="trash box.svg" alt="Icon" class="price-icon" />
-        <div class="quantity-control">
-      <button class="qty-btn minus">−</button>
+        <div class="qcart-control">
+      <button class="qcart-btn minus">−</button>
       <div class="divider"></div>
-      <div class="qty-display">1</div>
+      <div class="qcart-display">1</div>
       <div class="divider"></div>
-      <button class="qty-btn plus">+</button>
+      <button class="qcart-btn plus">+</button>
     </div>
       </div>
     </div>
@@ -131,5 +157,6 @@
     <img src="payment.png" alt="Payment Methods" class="payment-sprite" />
   </div>
 </footer>
+<script src="Page Script.js"></script>
 </body>
 </html>
